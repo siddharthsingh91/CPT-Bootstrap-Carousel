@@ -90,7 +90,8 @@ function cptbc_frontend($atts){
 		<div id="cptbc_<?php echo $id; ?>" class="carousel slide" <?php if($atts['use_javascript_animation'] == '0'){ echo ' data-ride="carousel"'; } ?> data-interval="<?php echo $atts['interval']; ?>">
 
 			<?php
-			if( $atts['showindicators'] === 'true' ) {
+			if(isset($atts['showindicators'])){
+			if($atts['showindicators'] === 'true' ) {
 			// First content - the carousel indicators
 				if( count( $images ) > 1 ){ ?>
 					<ol class="carousel-indicators">
@@ -100,7 +101,7 @@ function cptbc_frontend($atts){
 					</ol>
 				<?php
 				}
-			} ?>
+			} }?>
 
 			<div class="carousel-inner">
 			<?php
